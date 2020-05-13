@@ -7,8 +7,9 @@ const slackValidate = require('../validators/slack');
 
 router.post('/', function (req, res) {
   middle.authCheck( req, res, function () {
+    config.logger.debug("Passed auth check")
   utils.postValidate(req, res, slackValidate, function () {
-      config.logger.debug("Passed auth check")
+      config.logger.debug("Passed validation check")
       let data = {
         text: `Hello, you wrote: "${req.body.text}"`
       }
