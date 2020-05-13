@@ -14,3 +14,5 @@ Steps:
 5. heroku open
 
 Further Instructions: https://devcenter.heroku.com/articles/container-registry-and-runtime
+
+Slack app reference: https://x-team.com/blog/create-slack-app-in-3-minutes/
