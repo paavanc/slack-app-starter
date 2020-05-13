@@ -38,10 +38,10 @@ function checkForUser(item) {
       if (tmpStr.includes('@')){
         tmpStr = `<${tmpStr}>`
       }
-      config.logger.debug(tmpStr)
 
       newString = newString + " " +tmpStr
   }
+
   return newString
 }
 
