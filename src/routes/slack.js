@@ -12,6 +12,9 @@ router.post('/', function (req, res) {
   utils.postValidate(req, res, slackValidate, function () {
       config.logger.debug("Passed validation check")
       let responseText = utils.checkForUser(req.body.text)
+      if (!responseText.includes('@')){
+        return res.status(400).json({message: "You need to include a user"})
+      }
       let data = {
         text: `Hello, you wrote: ${responseText}`,
       }
