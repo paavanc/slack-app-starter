@@ -4,8 +4,9 @@ const middle = require('../middleware/index');
 const config = require('../../config');
 const utils = require('../utils/index');
 const slackValidate = require('../validators/slack');
+const morgan = require('morgan')
 
-router.post('/', function (req, res) {
+router.post('/', morgan('combined', { skip:  function (req, res) {
   middle.authCheck( req, res, function () {
     config.logger.debug("Passed auth check")
   utils.postValidate(req, res, slackValidate, function () {
@@ -19,6 +20,6 @@ router.post('/', function (req, res) {
         });
       });
   });
-});
+}}));
 
 module.exports = router;

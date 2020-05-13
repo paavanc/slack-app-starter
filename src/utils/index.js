@@ -3,7 +3,7 @@ const config = require('../../config');
 const axios = require('axios');
 
 function genRest(operation, url, headers, data, res, next) {
-    config.logger.debug(url)
+    //config.logger.debug(url)
     axios({
         method: operation,
         url: url,
