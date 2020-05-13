@@ -6,3 +6,4 @@ Documentation/
 .idea/
 .idea/vcs.xml
 npm-debug.log
+.env

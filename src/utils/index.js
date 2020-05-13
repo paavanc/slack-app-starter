@@ -13,7 +13,7 @@ function genRest(operation, url, headers, data, res, next) {
         next(response.data)
     })
         .catch(function (error) {
-            config.logger.debug(error)
+            config.logger.error(error)
             return res.status(400).json({"message": "unable to make " + operation + " request to " + url})
         });
 }

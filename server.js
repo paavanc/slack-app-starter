@@ -1,4 +1,6 @@
 
+
+const envResult =require('dotenv').config({ debug: true })
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -9,8 +11,13 @@ const slack = require('./src/routes/slack');
 const info = require('./src/routes/info');
 const morganBody = require('morgan-body');
 const app = express();
-require('dotenv').config({path: config});
 
+
+if (envResult.error) {
+  throw envResult.error
+}
+
+//config.logger.debug(envResult.parsed)
 
 app.use(logger('dev'));
 app.use(cors());

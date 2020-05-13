@@ -6,6 +6,8 @@ b. start server: npm start
 
 docker run -p 8080:8080 <image name> -will run on port 8080
 
+Note:
+You will need to create a .env that fills out the values of .env.test
 Heroku Deploy:
 www.heroku.com -  A website that auto deploys apps
 
@@ -17,5 +19,3 @@ Steps:
 5. heroku open
 
 Further Instructions: https://devcenter.heroku.com/articles/container-registry-and-runtime
-
-Slack app reference: https://x-team.com/blog/create-slack-app-in-3-minutes/
