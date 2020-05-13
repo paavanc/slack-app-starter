@@ -6,6 +6,7 @@ const utils = require('../utils/index');
 const slackValidate = require('../validators/slack');
 
 router.post('/', function (req, res) {
+  //config.logger.debug(req.body)
   middle.authCheck( req, res, function () {
     config.logger.debug("Passed auth check")
   utils.postValidate(req, res, slackValidate, function () {

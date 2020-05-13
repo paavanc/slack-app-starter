@@ -11,6 +11,30 @@ const slack = new Schema({
     token: {
         type: String,
         required: true,
+    },
+    team_id: {
+        type: String,
+    },
+    team_domain: {
+        type: String,
+    },
+    channel_id: {
+        type: String,
+    },
+    user_id: {
+        type: String,
+    },
+    user_name: {
+        type: String,
+    },
+    command: {
+        type: String,
+    },
+    response_url: {
+        type: String,
+    },
+    trigger_id: {
+        type: String,
     }
 })
 
