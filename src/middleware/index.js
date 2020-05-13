@@ -6,10 +6,10 @@ const config = require('../../config');
 
 
 function authCheck(req, res, next) {
-  //if (req.query.token !== config.slack.verificationToken) {
-  //return res.status(401).json({message: 'Unauthorized token'});
-//}
-  next(true)
+  if (utils.checkNull(req.body.token) ||  req.body.token !== config.slack.verificationToken) {
+  return res.status(401).json({message: 'Unauthorized token'});
+}
+  next()
 };
 
 module.exports.authCheck = authCheck

@@ -30,8 +30,8 @@ function makeSuite(name, tests) {
 
 makeSuite('Slack', function () {
 
-    it('test /slack GET', function (done) {
-            utiltest.testGetFail(chai, server, slackUrl, function (res) {
+    it('test /slack POST', function (done) {
+            utiltest.testPostFail(chai, server, slackUrl, {"token":config.slack.verificationToken}, function (res) {
                 done();
             });
     });
