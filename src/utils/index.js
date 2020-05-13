@@ -30,6 +30,23 @@ function checkNull(item) {
 
 module.exports.checkNull = checkNull
 
+function checkForUser(item) {
+  let itemArr = item.split(" ")
+  let newString = ""
+  for (let i of itemArr) {
+      let tmpStr = i
+      if (tmpStr.includes('@')){
+        tmpStr = `<${tmpStr}>`
+      }
+      config.logger.debug(tmpStr)
+
+      newString = newString + " " +tmpStr
+  }
+  return newString
+}
+
+module.exports.checkForUser = checkForUser
+
 
 function validateDict(dict, validator, next) {
     next(validator.validate(dict))

@@ -6,6 +6,7 @@ const config = require('../../config');
 
 
 function authCheck(req, res, next) {
+  // config.logger.debug(config.slack.verificationToken)
   if (utils.checkNull(req.body.token) ||  req.body.token !== config.slack.verificationToken) {
   return res.status(401).json({message: 'Unauthorized token'});
 }

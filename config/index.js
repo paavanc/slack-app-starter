@@ -5,6 +5,9 @@ config.methods = {};
 config.slack = {}
 logger.level = process.env.LOG_LVL ? process.env.LOG_LVL : 'debug';
 config.logger = logger;
+config.regex = {};
+
+config.regex.text = /^\S*$/
 
 config.methods.post = 'post'
 config.methods.get = 'get'

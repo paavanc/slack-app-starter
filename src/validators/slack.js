@@ -6,6 +6,7 @@ import Schema from 'validate'
 const slack = new Schema({
     text: {
       type: String,
+      match: config.regex.text,
       required: true,
     },
     token: {

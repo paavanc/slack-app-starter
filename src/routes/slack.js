@@ -11,8 +11,9 @@ router.post('/', function (req, res) {
     config.logger.debug("Passed auth check")
   utils.postValidate(req, res, slackValidate, function () {
       config.logger.debug("Passed validation check")
+      let responseText = utils.checkForUser(req.body.text)
       let data = {
-        text: `Hello, you wrote: <${req.body.text}>`,
+        text: `Hello, you wrote: ${responseText}`,
       }
       utils.genRest(config.methods.post, config.slack.baseUrl + config.slack.token,
         null, data, res, function (result) {
