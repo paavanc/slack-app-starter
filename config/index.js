@@ -15,9 +15,9 @@ config.methods.patch = 'patch'
 config.slack.baseUrl = process.env.SLACK_URL ? process.env.SLACK_URL : 'https://hooks.slack.com/services/';
 config.slack.token = process.env.SLACK_TOKEN ? process.env.SLACK_TOKEN : 'Dont Know';
 config.slack.verificationToken = process.env.SLACK_VERIFICATON_TOKEN ? process.env.SLACK_VERIFICATON_TOKEN : 'Dont Know';
-
 config.slack.subUrls = {}
 config.slack.subUrls.postMessage = "chat.postMessage"
 
+config.debugMode = process.env.IS_PROD ? false: true;
 
 module.exports = config;

@@ -23,7 +23,9 @@ app.use(logger('dev'));
 app.use(cors());
 app.use(bodyParser.json());
 
-morganBody(app);
+if (config.debugMode){
+  morganBody(app); //NOTE THIS WILL LOG THE PASSWORD
+}
 
 app.use(bodyParser.urlencoded({extended: false}));
 
